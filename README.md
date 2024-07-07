@@ -29,7 +29,7 @@ Timbu cloud shop page is a project issued by HNG11 in stage two to get promotion
 
 ### Links
 
-- Solution URL: [Github solution](https://github.com/olanrewajuyusuf/Loopstudios-landing-page)
+- Solution URL: [Github solution](https://github.com/olanrewajuyusuf/Timbu-Cloud-Shop)
 - Live Site URL: [Timbu on Netlify](https://wallewdev-loopstudio.netlify.app/)
 
 ## Getting Started
@@ -48,11 +48,11 @@ Follow these steps to install and run the application:
 
 1 Clone the repository to your local machine:
 
-`git clone https://github.com/your-username/movie-discovery-app.git`
+`git clone https://github.com/olanrewajuyusuf/Timbu-Cloud-Shop`
 
 2 Navigate to the project directory:
 
-`cd movie-discovery-app`
+`cd Timbu-Cloud-Shop`
 
 3 Install the required dependencies:
 
