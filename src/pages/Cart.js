@@ -1,3 +1,4 @@
+import CartDesktop from "../components/CartDesktop";
 import CartMobile from "../components/CartMobile";
 import Header from "../components/Header";
 
@@ -6,6 +7,7 @@ const Cart = () => {
     <div className="pb-16">
       <Header />
       <CartMobile />
+      <CartDesktop />
     </div>
   );
 };

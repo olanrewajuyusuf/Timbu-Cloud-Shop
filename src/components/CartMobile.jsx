@@ -7,60 +7,12 @@ import Pearl from "../assets/images/mobile/latest/pearl.png";
 
 const CartMobile = () => {
   return (
-    <div>
+    <div className="md:hidden">
         <h1 className="bg-[#4E4E4E] text-center font-[800] text-[24px] text-white py-5 mt-[15%]">
           Shopping Cart
         </h1>
 
         <div className="p-5">
-          <div className="flex items-center font-[600] gap-4 border-b-[1px] border-black py-3">
-            <img
-              className="w-[124px] h-[124px] object-cover"
-              src={Pearl}
-              alt="pearl"
-            />
-            <div className="w-full">
-              <p>Feathered Headgear</p>
-              <div className="flex justify-between items-center gap-5 pt-3">
-                <div className="flex justify-between items-center gap-5">
-                  <span className="flex justify-between items-center border border-[#999999] w-[70px] px-1">
-                    <span>2</span>
-                    <span>
-                      <img src={Expand_up} alt="arrow up" />
-                      <img src={Expand_down} alt="arrow down" />
-                    </span>
-                  </span>
-                  <span>#12,000</span>
-                </div>
-                <img src={close} alt="close menu" />
-              </div>
-            </div>
-          </div>
-
-          <div className="flex items-center font-[600] gap-4 border-b-[1px] border-black py-3">
-            <img
-              className="w-[124px] h-[124px] object-cover"
-              src={Pearl}
-              alt="pearl"
-            />
-            <div className="w-full">
-              <p>Feathered Headgear</p>
-              <div className="flex justify-between items-center gap-5 pt-3">
-                <div className="flex justify-between items-center gap-5">
-                  <span className="flex justify-between items-center border border-[#999999] w-[70px] px-1">
-                    <span>2</span>
-                    <span>
-                      <img src={Expand_up} alt="arrow up" />
-                      <img src={Expand_down} alt="arrow down" />
-                    </span>
-                  </span>
-                  <span>#12,000</span>
-                </div>
-                <img src={close} alt="close menu" />
-              </div>
-            </div>
-          </div>
-
           <div className="flex items-center font-[600] gap-4 border-b-[1px] border-black py-3">
             <img
               className="w-[124px] h-[124px] object-cover"
@@ -104,7 +56,7 @@ const CartMobile = () => {
             <span>#45,000</span>
           </div>
           <Link
-            className="bg-[#333333] text-white w-[220px] h-[51px] flex justify-center items-center rounded-[10px]"
+            className="bg-[#333333] hover:bg-[#555555] text-white w-[220px] h-[51px] flex justify-center items-center rounded-[10px]"
             to="/checkout"
           >
             Proceed to Checkout
