@@ -17,7 +17,6 @@ const CartDesktop = () => {
 
         <div className="py-5">
           <table className="w-full text-black font-[600] text-[20px]">
-            {cart.map(item => ( <Fragment key={item.id}>
             <thead>
               <tr className="">
                 <th className='text-start'>Product</th>
@@ -26,8 +25,9 @@ const CartDesktop = () => {
                 <th className='text-start'>Total</th>
               </tr>
             </thead>
-            <tbody>
-              <tr className="border-b-[1px] border-black">
+            <tbody >
+            {cart.map(item => (
+              <tr key={item.id} className="border-b-[1px] border-black">
                 <td className='text-start flex items-center gap-5'>
                   <img
                     className="w-[124px] h-[124px] object-cover"
@@ -52,9 +52,8 @@ const CartDesktop = () => {
                     <img onClick={() => removeFromCart(item.id)} src={close} alt="close menu" />
                   </div>
                 </td>
-              </tr>
+              </tr>))}
             </tbody>
-          </Fragment>))}
           </table>
         </div>
 
