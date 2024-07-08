@@ -1,6 +1,10 @@
+import { useContext } from 'react'
 import cart from '../assets/icons/cart.svg'
+import { CartContext } from '../contexts/CartContext'
 
-const LimitedEdition = ({products, desktopProducts, setAddToCart}) => {
+const LimitedEdition = ({products, desktopProducts}) => {
+    const { addToCart } = useContext(CartContext);
+    
   return (
     <div>
         {products && products.map(product => (
@@ -12,7 +16,7 @@ const LimitedEdition = ({products, desktopProducts, setAddToCart}) => {
                         <p>#{product.price}</p>
                     </div>
                     <button 
-                    // onClick={() => setAddToCart(product)}
+                    onClick={() => addToCart(product)}
                     className="flex items-center text-black text-[10px] border border-black rounded-[15px] p-1 hover:bg-black hover:text-white"
                     >
                         <img className='w-5' src={cart} alt="cart" />
@@ -32,7 +36,9 @@ const LimitedEdition = ({products, desktopProducts, setAddToCart}) => {
                         <p>{product.name}</p>
                         <p>#{product.price}</p>
                     </div>
-                    <button className="flex items-center text-black text-[10px] border border-black rounded-[15px] p-1 hover:bg-black hover:text-white">
+                    <button 
+                    onClick={() => addToCart(product)}
+                    className="flex items-center text-black text-[10px] border border-black rounded-[15px] p-1 hover:bg-black hover:text-white">
                         <img className='w-5' src={cart} alt="cart" />
                         Add to Cart
                     </button>

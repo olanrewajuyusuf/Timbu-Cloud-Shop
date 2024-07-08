@@ -4,7 +4,7 @@ import { products } from '../data/Mobile/Products'
 import { desktopProducts } from '../data/Desktop/Products'
 import { NavLink } from "react-router-dom"
 
-const Products = ({setAddToCart}) => {
+const Products = () => {
   return (
     <div className='p-5 md:px-10'>
         {/* =====> Mobile products display <===== */}
@@ -26,7 +26,7 @@ const Products = ({setAddToCart}) => {
                     <img className='w-3 h-2' src={Vector} alt="arrow" />
                 </div>
             </div>
-            <Product products={products} setAddToCart={setAddToCart} />
+            <Product products={products} />
         </div>
 
         {/* =====> Desktop products display <===== */}
@@ -47,7 +47,7 @@ const Products = ({setAddToCart}) => {
                     <NavLink><li>Bridal Fan</li></NavLink>
                 </ul>
 
-                <Product desktopProducts={desktopProducts} setAddToCart={setAddToCart} />
+                <Product desktopProducts={desktopProducts} />
             </div>
         </div>
     </div>

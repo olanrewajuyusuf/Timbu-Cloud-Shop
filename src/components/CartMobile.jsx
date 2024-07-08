@@ -3,25 +3,28 @@ import Arrow from "../assets/icons/Arrow.png";
 import Expand_down from "../assets/icons/Expand_down.png";
 import Expand_up from "../assets/icons/Expand_up.png";
 import close from "../assets/icons/close.png";
-import Pearl from "../assets/images/mobile/latest/pearl.png";
+import React, { useContext } from 'react';
+import { CartContext } from "../contexts/CartContext";
 
-const CartMobile = ({addToCart}) => {
-  console.log("add", addToCart);
+const CartMobile = () => {
+  const { cart, removeFromCart } = useContext(CartContext);
+
   return (
     <div className="md:hidden">
         <h1 className="bg-[#4E4E4E] text-center font-[800] text-[24px] text-white py-5 mt-[15%]">
           Shopping Cart
         </h1>
 
-        <div className="p-5">
-          <div className="flex items-center font-[600] gap-4 border-b-[1px] border-black py-3">
+        {cart.map(item => (
+          <div key={item.id} className="p-5">
+            <div  className="flex items-center font-[600] gap-4 border-b-[1px] border-black py-3">
             <img
               className="w-[124px] h-[124px] object-cover"
-              src={Pearl}
-              alt="pearl"
+              src={item.image}
+              alt='product'
             />
             <div className="w-full">
-              <p>Feathered Headgear</p>
+              <p>{item.name}</p>
               <div className="flex justify-between items-center gap-5 pt-3">
                 <div className="flex justify-between items-center gap-5">
                   <span className="flex justify-between items-center border border-[#999999] w-[70px] px-1">
@@ -31,13 +34,13 @@ const CartMobile = ({addToCart}) => {
                       <img src={Expand_down} alt="arrow down" />
                     </span>
                   </span>
-                  <span>#12,000</span>
+                  <span>#{item.price}</span>
                 </div>
-                <img src={close} alt="close menu" />
+                <img onClick={() => removeFromCart(item.id)} src={close} alt="close menu" />
               </div>
             </div>
           </div>
-        </div>
+        </div>))}
 
         <div className="text-black font-[600] flex flex-col gap-3 px-5 mt-10">
           <p>Do you have a discount?</p>

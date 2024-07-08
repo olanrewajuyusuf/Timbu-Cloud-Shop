@@ -3,9 +3,12 @@ import Arrow from "../assets/icons/Arrow.png";
 import Expand_down from "../assets/icons/Expand_down.png";
 import Expand_up from "../assets/icons/Expand_up.png";
 import close from "../assets/icons/close.png";
-import Pearl from "../assets/images/mobile/latest/pearl.png";
+import React, { Fragment, useContext } from 'react';
+import { CartContext } from "../contexts/CartContext";
 
-const CartDesktop = ({addToCart}) => {
+const CartDesktop = () => {
+  const { cart, removeFromCart } = useContext(CartContext);
+
   return (
     <div className="hidden md:block p-20">
         <h1 className="bg-[#4E4E4E] text-center font-[800] text-[32px] text-white py-5 mt-[7%]">
@@ -14,38 +17,44 @@ const CartDesktop = ({addToCart}) => {
 
         <div className="py-5">
           <table className="w-full text-black font-[600] text-[20px]">
-            <tr className="">
-              <th className='text-start'>Product</th>
-              <th className='text-start'>Price</th>
-              <th className='text-start'>Qty</th>
-              <th className='text-start'>Total</th>
-            </tr>
-            <tr className="border-b-[1px] border-black">
-              <td className='text-start flex items-center gap-5'>
-                <img
-                  className="w-[124px] h-[124px] object-cover"
-                  src={Pearl}
-                  alt="pearl"
-                />
-                <p className=" ">Feathered Headgear</p>
-              </td>
-              <td className='text-start'>#12,000</td>
-              <td className='text-start'>
-                  <span className="flex justify-between items-center border border-[#999999] w-[70px] px-1">
-                    <span>2</span>
-                    <span>
-                      <img src={Expand_up} alt="arrow up" />
-                      <img src={Expand_down} alt="arrow down" />
+            {cart.map(item => ( <Fragment key={item.id}>
+            <thead>
+              <tr className="">
+                <th className='text-start'>Product</th>
+                <th className='text-start'>Price</th>
+                <th className='text-start'>Qty</th>
+                <th className='text-start'>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b-[1px] border-black">
+                <td className='text-start flex items-center gap-5'>
+                  <img
+                    className="w-[124px] h-[124px] object-cover"
+                    src={item.image}
+                    alt="pearl"
+                  />
+                  <p className=" ">{item.name}</p>
+                </td>
+                <td className='text-start'>#{item.price}</td>
+                <td className='text-start'>
+                    <span className="flex justify-between items-center border border-[#999999] w-[70px] px-1">
+                      <span>2</span>
+                      <span>
+                        <img src={Expand_up} alt="arrow up" />
+                        <img src={Expand_down} alt="arrow down" />
+                      </span>
                     </span>
-                  </span>
-              </td>
-              <td className='text-start'>
-                <div className="flex justify-between items-center w-full">
-                  <span>#24,000</span> 
-                  <img src={close} alt="close menu" />
-                </div>
-              </td>
-            </tr>
+                </td>
+                <td className='text-start'>
+                  <div className="flex justify-between items-center w-full">
+                    <span>#24,000</span> 
+                    <img onClick={() => removeFromCart(item.id)} src={close} alt="close menu" />
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </Fragment>))}
           </table>
         </div>
 
