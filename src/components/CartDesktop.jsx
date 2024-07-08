@@ -3,7 +3,7 @@ import Arrow from "../assets/icons/Arrow.png";
 import Expand_down from "../assets/icons/Expand_down.png";
 import Expand_up from "../assets/icons/Expand_up.png";
 import close from "../assets/icons/close.png";
-import React, { Fragment, useContext } from 'react';
+import React, { useContext } from 'react';
 import { CartContext } from "../contexts/CartContext";
 
 const CartDesktop = () => {
