@@ -9,7 +9,7 @@ const Header = () => {
   const [ showMenu, setShowMenu ] = useState(false);
 
   return (
-    <header className='fixed top-0 left-0 w-full bg-[#CBCBCB] z-10 px-5 md:px-20 pt-10 pb-2 border border-t-0 border-x-0 border-b-4 border-[black] text-[#333333]'>
+    <header className='fixed top-0 left-0 w-full bg-[#CBCBCB] z-10 px-5 md:px-20 pt-10 pb-2 border-b-4 border-[black] text-[#333333]'>
       {/* =====> Mobile Header <===== */}
         <nav className='md:hidden flex justify-between items-center'>
             <img className='cursor-pointer' src={Menu} alt="menu icon" onClick={() => setShowMenu(!showMenu)}/>
