@@ -5,7 +5,8 @@ import Expand_up from "../assets/icons/Expand_up.png";
 import close from "../assets/icons/close.png";
 import Pearl from "../assets/images/mobile/latest/pearl.png";
 
-const CartMobile = () => {
+const CartMobile = ({addToCart}) => {
+  console.log("add", addToCart);
   return (
     <div className="md:hidden">
         <h1 className="bg-[#4E4E4E] text-center font-[800] text-[24px] text-white py-5 mt-[15%]">

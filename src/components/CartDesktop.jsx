@@ -5,7 +5,7 @@ import Expand_up from "../assets/icons/Expand_up.png";
 import close from "../assets/icons/close.png";
 import Pearl from "../assets/images/mobile/latest/pearl.png";
 
-const CartDesktop = () => {
+const CartDesktop = ({addToCart}) => {
   return (
     <div className="hidden md:block p-20">
         <h1 className="bg-[#4E4E4E] text-center font-[800] text-[32px] text-white py-5 mt-[7%]">
@@ -13,16 +13,24 @@ const CartDesktop = () => {
         </h1>
 
         <div className="py-5">
-          <div className="flex items-center font-[600] gap-4 border-b-[1px] border-black py-3">
-            <img
-              className="w-[124px] h-[124px] object-cover"
-              src={Pearl}
-              alt="pearl"
-            />
-            <div className="w-full">
-              <p>Feathered Headgear</p>
-              <div className="flex justify-between items-center gap-5 pt-3">
-                <div className="flex justify-between items-center gap-5">
+          <table className="w-full text-black font-[600] text-[20px]">
+            <tr className="">
+              <th className='text-start'>Product</th>
+              <th className='text-start'>Price</th>
+              <th className='text-start'>Qty</th>
+              <th className='text-start'>Total</th>
+            </tr>
+            <tr className="border-b-[1px] border-black">
+              <td className='text-start flex items-center gap-5'>
+                <img
+                  className="w-[124px] h-[124px] object-cover"
+                  src={Pearl}
+                  alt="pearl"
+                />
+                <p className=" ">Feathered Headgear</p>
+              </td>
+              <td className='text-start'>#12,000</td>
+              <td className='text-start'>
                   <span className="flex justify-between items-center border border-[#999999] w-[70px] px-1">
                     <span>2</span>
                     <span>
@@ -30,12 +38,15 @@ const CartDesktop = () => {
                       <img src={Expand_down} alt="arrow down" />
                     </span>
                   </span>
-                  <span>#12,000</span>
+              </td>
+              <td className='text-start'>
+                <div className="flex justify-between items-center w-full">
+                  <span>#24,000</span> 
+                  <img src={close} alt="close menu" />
                 </div>
-                <img src={close} alt="close menu" />
-              </div>
-            </div>
-          </div>
+              </td>
+            </tr>
+          </table>
         </div>
 
         <div className="text-black font-[600] flex justify-between items-start px-5 mt-10">

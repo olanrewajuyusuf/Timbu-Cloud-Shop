@@ -4,13 +4,13 @@ import Hero from "../components/Hero";
 import LimitedEditions from "../components/LimitedEditions";
 import Products from "../components/Products";
 
-const HomePage = () => {
+const HomePage = ({ setAddToCart }) => {
   return (
     <div>
       <Header />
       <Hero />
-      <Products />
-      <LimitedEditions />
+      <Products setAddToCart={setAddToCart} />
+      <LimitedEditions setAddToCart={setAddToCart} />
       <Footer />
     </div>
   );

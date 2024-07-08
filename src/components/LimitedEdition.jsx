@@ -1,6 +1,6 @@
 import cart from '../assets/icons/cart.svg'
 
-const LimitedEdition = ({products, desktopProducts}) => {
+const LimitedEdition = ({products, desktopProducts, setAddToCart}) => {
   return (
     <div>
         {products && products.map(product => (
@@ -11,7 +11,10 @@ const LimitedEdition = ({products, desktopProducts}) => {
                         <p>{product.name}</p>
                         <p>#{product.price}</p>
                     </div>
-                    <button className="flex items-center text-black text-[10px] border border-black rounded-[15px] p-1 hover:bg-black hover:text-white">
+                    <button 
+                    // onClick={() => setAddToCart(product)}
+                    className="flex items-center text-black text-[10px] border border-black rounded-[15px] p-1 hover:bg-black hover:text-white"
+                    >
                         <img className='w-5' src={cart} alt="cart" />
                         Add to Cart
                     </button>
