@@ -2,8 +2,8 @@
 import Expand_down from "../assets/icons/Expand_down.png";
 import Expand_up from "../assets/icons/Expand_up.png";
 import close from "../assets/icons/close.png";
-import clustered from "../assets/images/desktop/latest/clustered.png";
-import turkey from "../assets/images/desktop/latest/turkey.png";
+import clustered from "../assets/images/desktop/latest/Clustered.png";
+import turkey from "../assets/images/desktop/latest/Turkish.png";
 import headgear from "../assets/images/desktop/limited/headgear.png";
 
 const ItemLeft = () => {
