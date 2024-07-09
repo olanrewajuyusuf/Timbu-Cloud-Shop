@@ -29,17 +29,17 @@ const CheckoutForm = () => {
 
         <form className='mt-10'>
             <label htmlFor="name">Cardholder’s name</label>
-            <input className='w-full h-[40px] pl-5 bg-[#ECECEC] text-[12px] my-2' type="text" name='name' placeholder='Abhay City' />
+            <input className='w-full h-[40px] pl-5 bg-[#CBCBCB] border-[1px] border-[#4E4E4E] rounded-md text-[12px] my-2' type="text" name='name' placeholder='Abhay City' />
             <label htmlFor="number">Card number</label>
-            <input className='w-full h-[40px] pl-5 bg-[#ECECEC] text-[12px] mt-2' type="number" name='number' placeholder='1111 2222 3333 4444' />
+            <input className='w-full h-[40px] pl-5 bg-[#CBCBCB] border-[1px] border-[#4E4E4E] rounded-md text-[12px] mt-2' type="number" name='number' placeholder='1111 2222 3333 4444' />
             <div className='grid grid-cols-2 gap-5 my-5'>
                 <div>
                     <label htmlFor="date">Expiry date</label>
-                    <input className='w-full h-[40px] pl-5 bg-[#ECECEC] text-[12px] mt-2' type="date" name='date' placeholder='23/2027' />
+                    <input className='w-full h-[40px] pl-5 bg-[#CBCBCB] border-[1px] border-[#4E4E4E] rounded-md text-[12px] mt-2' type="text" name='date' placeholder='23/2027' />
                 </div>
                 <div>
                     <label htmlFor="cvv">CVV</label>
-                    <input className='w-full h-[40px] pl-5 bg-[#ECECEC] text-[12px] mt-2' type="number" name='cvv' placeholder='123' />
+                    <input className='w-full h-[40px] pl-5 bg-[#CBCBCB] border-[1px] border-[#4E4E4E] rounded-md text-[12px] mt-2' type="number" name='cvv' placeholder='123' />
                 </div>
             </div>
         </form>
