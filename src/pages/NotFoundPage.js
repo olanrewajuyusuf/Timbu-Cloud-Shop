@@ -10,6 +10,7 @@ const NotFoundPage = () => {
         <Link to="/" className="text-green-500 font-bold">
           Homepage
         </Link>
+        !
       </p>
     </div>
   );
