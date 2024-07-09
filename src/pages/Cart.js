@@ -1,13 +1,11 @@
 import CartDesktop from "../components/CartDesktop";
 import CartMobile from "../components/CartMobile";
-import Header from "../components/Header";
 
-const Cart = ({ addToCart }) => {
+const Cart = () => {
   return (
-    <div className="pb-16">
-      <Header addToCart={addToCart} />
-      <CartMobile addToCart={addToCart} />
-      <CartDesktop addToCart={addToCart} />
+    <div className="bg-[#CBCBCB] pt-24 md:pt-0 pb-16">
+      <CartMobile />
+      <CartDesktop />
     </div>
   );
 };

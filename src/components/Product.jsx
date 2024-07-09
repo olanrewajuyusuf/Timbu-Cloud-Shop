@@ -4,6 +4,7 @@ import { CartContext } from '../contexts/CartContext'
 
 const Product = ({products, desktopProducts}) => {
     const { addToCart } = useContext(CartContext);
+
   return (
     <div>
         {products && products.map(product => (
@@ -29,7 +30,9 @@ const Product = ({products, desktopProducts}) => {
         <div className='hidden md:grid grid-cols-3 lg:grid-cols-4 justify-start items-start gap-10'>
         {desktopProducts && desktopProducts.map(product => (
             <div className='' key={product.id}>
-                <img className="w-full h-[400px] shadow-xl" src={product.image} alt="product" />
+                <div className='border-[1px] border-black'>
+                    <img className="w-full h-[300px] object-cover" src={product.image} alt="product" />
+                </div>
                 <div className='flex flex-col justify-between items-start mt-4 gap-3'>
                     <div className='font-bold text-black text-[16px]'>
                         <p>{product.name}</p>

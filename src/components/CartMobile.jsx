@@ -5,17 +5,24 @@ import Expand_up from "../assets/icons/Expand_up.png";
 import close from "../assets/icons/close.png";
 import React, { useContext } from 'react';
 import { CartContext } from "../contexts/CartContext";
+import Header from "./Header";
 
 const CartMobile = () => {
   const { cart, removeFromCart } = useContext(CartContext);
 
   return (
     <div className="md:hidden">
-        <h1 className="bg-[#4E4E4E] text-center font-[800] text-[24px] text-white py-5 mt-[15%]">
+      <Header />
+        <h1 className="bg-[#4E4E4E] text-center font-[800] text-[24px] text-white py-5 ">
           Shopping Cart
         </h1>
 
-        {cart.map(item => (
+        {cart.length < 1 && (
+            <div className="flex justify-center items-center h-40 font-bold text-[16px]">
+              <p>Your cart is empty</p>
+            </div>
+        )}
+        {cart.length > 0 && cart.map(item => (
           <div key={item.id} className="p-5">
             <div  className="flex items-center font-[600] gap-4 border-b-[1px] border-black py-3">
             <img

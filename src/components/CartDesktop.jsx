@@ -5,18 +5,25 @@ import Expand_up from "../assets/icons/Expand_up.png";
 import close from "../assets/icons/close.png";
 import React, { useContext } from 'react';
 import { CartContext } from "../contexts/CartContext";
+import Header from "./Header";
 
 const CartDesktop = () => {
   const { cart, removeFromCart } = useContext(CartContext);
 
   return (
-    <div className="hidden md:block p-20">
+    <div className="hidden md:block px-20 pt-14">
+      <Header padding='80px' />
         <h1 className="bg-[#4E4E4E] text-center font-[800] text-[32px] text-white py-5 mt-[7%]">
           Your Shopping Cart
         </h1>
 
         <div className="py-5">
-          <table className="w-full text-black font-[600] text-[20px]">
+          {cart.length < 1 && (
+            <div className="flex justify-center items-center h-40 font-bold text-[24px]">
+              <p>Your cart is empty</p>
+            </div>
+          )}
+          {cart.length > 0 && <table className="w-full text-black font-[600] text-[20px]">
             <thead>
               <tr className="">
                 <th className='text-start'>Product</th>
@@ -54,10 +61,10 @@ const CartDesktop = () => {
                 </td>
               </tr>))}
             </tbody>
-          </table>
+          </table>}
         </div>
 
-        <div className="text-black font-[600] flex justify-between items-start px-5 mt-10">
+        <div className="text-black font-[600] flex justify-between items-start mt-10">
             <div>
                 <p>Do you have a discount?</p>
                 <div className="bg-[#999999] text-[#333333] text-[12px] w-[234px] h-[42px] flex justify-between items-center rounded-e-2xl pl-3 mt-3">
