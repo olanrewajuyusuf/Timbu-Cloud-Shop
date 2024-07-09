@@ -1,11 +1,11 @@
-import pearl from "../../assets/images/desktop/latest/Pearl.png";
-import clustered from "../../assets/images/desktop/latest/cluster.png";
-import aurora from "../../assets/images/desktop/latest/Aurora.png";
-import flora from "../../assets/images/desktop/latest/Flora.png";
-import turkey from "../../assets/images/desktop/latest/Turkish.png";
-import lace from "../../assets/images/desktop/latest/Lace.png";
-import ivy from "../../assets/images/desktop/latest/Ivy.png";
-import czech from "../../assets/images/desktop/latest/Czech.png";
+import pearl from "../../assets/images/desktop/latest/pearl.png";
+import clustered from "../../assets/images/desktop/latest/clustered.png";
+import aurora from "../../assets/images/desktop/latest/aurora.png";
+import flora from "../../assets/images/desktop/latest/flora.png";
+import turkey from "../../assets/images/desktop/latest/turkey.png";
+import lace from "../../assets/images/desktop/latest/lace.png";
+import ivy from "../../assets/images/desktop/latest/ivy.png";
+import czech from "../../assets/images/desktop/latest/czech.png";
 
 export const desktopProducts = [
   {
