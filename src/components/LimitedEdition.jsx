@@ -13,7 +13,7 @@ const LimitedEdition = ({products, desktopProducts}) => {
                 <div className='flex justify-between items-start mt-4'>
                     <div className='font-bold text-black text-[16px]'>
                         <p>{product.name}</p>
-                        <p>#{product.price}</p>
+                        <p>₦{product.price}</p>
                     </div>
                     <button 
                     onClick={() => addToCart(product)}
@@ -34,7 +34,7 @@ const LimitedEdition = ({products, desktopProducts}) => {
                 <div className='flex flex-col justify-between items-start mt-4 gap-3'>
                     <div className='font-bold text-black text-[16px]'>
                         <p>{product.name}</p>
-                        <p>#{product.price}</p>
+                        <p>₦{product.price}</p>
                     </div>
                     <button 
                     onClick={() => addToCart(product)}

@@ -7,12 +7,18 @@ import React, { useContext } from 'react';
 import { CartContext } from "../contexts/CartContext";
 import Header from "./Header";
 
-const CartDesktop = () => {
+const CartDesktop = ({searchQuery, handleSearchChange, showInput, setShowInput}) => {
   const { cart, removeFromCart, increaseQuantity, decreaseQuantity, totalPrice } = useContext(CartContext);
 
   return (
     <div className="hidden md:block px-20 pt-14">
-      <Header padding='80px' />
+      <Header 
+        padding='80px'
+        searchQuery={searchQuery}
+        handleSearchChange={handleSearchChange}
+        showInput={showInput}
+        setShowInput={setShowInput}
+      />
         <h1 className="bg-[#4E4E4E] text-center font-[800] text-[32px] text-white py-5 mt-[7%]">
           Your Shopping Cart
         </h1>
@@ -43,7 +49,7 @@ const CartDesktop = () => {
                   />
                   <p className=" ">{item.name}</p>
                 </td>
-                <td className='text-start'>#{item.price}</td>
+                <td className='text-start'>₦{item.price}</td>
                 <td className='text-start'>
                     <span className="flex justify-between items-center border border-[#999999] w-[70px] px-1">
                       <span>{item.quantity}</span>
@@ -55,7 +61,7 @@ const CartDesktop = () => {
                 </td>
                 <td className='text-start'>
                   <div className="flex justify-between items-center w-full">
-                    <span>#{item.price * item.quantity.toFixed(2)}</span> 
+                    <span>₦{item.price * item.quantity.toFixed(2)}</span> 
                     <img onClick={() => removeFromCart(item.id)} src={close} alt="close menu" />
                   </div>
                 </td>
@@ -78,12 +84,12 @@ const CartDesktop = () => {
             <div>
                 <p>Delivery</p>
                 <div className="border-[2px] border-black w-[283px] h-[63px] flex justify-between items-center px-3 my-3">
-                    <span>Indrive - #2000</span>
+                    <span>Indrive - ₦2000</span>
                     <img src={Expand_down} alt="arrow down" />
                 </div>
                 <div className="flex justify-between items-center w-[283px] text-[24px]">
                     <span>Total</span>
-                    <span>#{totalPrice.toFixed(2)}</span>
+                    <span>₦{totalPrice.toFixed(2)}</span>
                 </div>
                 <Link
                     className="bg-[#333333] hover:bg-[#555555] text-white w-[283px] h-[51px] flex justify-center items-center mt-3"

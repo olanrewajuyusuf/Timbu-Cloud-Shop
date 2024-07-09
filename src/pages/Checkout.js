@@ -2,11 +2,16 @@ import React from "react";
 import CheckoutMobile from "../components/CheckoutMobile";
 import CheckoutDesktop from "../components/CheckoutDesktop";
 
-const Checkout = () => {
+const Checkout = (searchQuery, handleSearchChange, showInput, setShowInput) => {
   return (
     <div>
       <CheckoutMobile />
-      <CheckoutDesktop />
+      <CheckoutDesktop
+        searchQuery={searchQuery}
+        handleSearchChange={handleSearchChange}
+        showInput={showInput}
+        setShowInput={setShowInput}
+      />
     </div>
   );
 };

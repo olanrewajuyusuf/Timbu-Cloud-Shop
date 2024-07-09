@@ -5,10 +5,16 @@ import Header from './Header'
 import arrow from '../assets/icons/arrowl.png'
 import { Link } from 'react-router-dom'
 
-const CheckoutDesktop = () => {
+const CheckoutDesktop = ({searchQuery, handleSearchChange, showInput, setShowInput}) => {
   return (
     <div className='hidden lg:block mt-[6%] text-black p-20'>
-      <Header padding='80px' />
+      <Header 
+        padding='80px'
+        searchQuery={searchQuery}
+        handleSearchChange={handleSearchChange}
+        showInput={showInput}
+        setShowInput={setShowInput} 
+      />
       <div className='mb-10'>
         <Link to='/cart'><img src={arrow} alt="arrow" /></Link>
       </div>

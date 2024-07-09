@@ -47,15 +47,15 @@ const CheckoutForm = () => {
     <div className='py-3 px-5 font-[600]'>
         <span className='flex justify-between'>
             <p>Subtotal</p>
-            <p>#43,00</p>
+            <p>₦43,00</p>
         </span>
         <span className='flex justify-between'>
             <p>Delivery</p>
-            <p>#2000</p>
+            <p>₦2000</p>
         </span>
         <span className='flex justify-between'>
             <p>Total</p>
-            <p>#45,000</p>
+            <p>₦45,000</p>
         </span>
 
         <p className='my-3 flex items-center gap-1 text-[14px]'>

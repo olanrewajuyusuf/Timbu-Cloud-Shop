@@ -7,12 +7,17 @@ import React, { useContext } from 'react';
 import { CartContext } from "../contexts/CartContext";
 import Header from "./Header";
 
-const CartMobile = () => {
+const CartMobile = ({searchQuery, handleSearchChange, showInput, setShowInput}) => {
   const { cart, removeFromCart, increaseQuantity, decreaseQuantity, totalPrice } = useContext(CartContext);
 
   return (
     <div className="md:hidden">
-      <Header />
+      <Header 
+        searchQuery={searchQuery}
+        handleSearchChange={handleSearchChange}
+        showInput={showInput}
+        setShowInput={setShowInput}
+      />
         <h1 className="bg-[#4E4E4E] text-center font-[800] text-[24px] text-white py-5 ">
           Shopping Cart
         </h1>
@@ -41,7 +46,7 @@ const CartMobile = () => {
                       <img onClick={() => decreaseQuantity(item.id)} src={Expand_down} alt="arrow down" />
                     </span>
                   </span>
-                  <span>#{item.price * item.quantity.toFixed(2)}</span>
+                  <span>₦{item.price * item.quantity.toFixed(2)}</span>
                 </div>
                 <img onClick={() => removeFromCart(item.id)} src={close} alt="close menu" />
               </div>
@@ -59,12 +64,12 @@ const CartMobile = () => {
           </div>
           <p>Delivery</p>
           <div className="border-[2px] border-black w-[283px] h-[63px] flex justify-between items-center px-3">
-            <span>Indrive - #2000</span>
+            <span>Indrive - ₦2000</span>
             <img src={Expand_down} alt="arrow down" />
           </div>
           <div className="flex justify-between items-center w-[283px] text-[24px]">
             <span>Total</span>
-            <span>#{totalPrice.toFixed(2)}</span>
+            <span>₦{totalPrice.toFixed(2)}</span>
           </div>
           <Link
             className="bg-[#333333] hover:bg-[#555555] text-white w-[220px] h-[51px] flex justify-center items-center rounded-[10px]"

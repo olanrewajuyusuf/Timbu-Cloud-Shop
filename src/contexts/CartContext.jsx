@@ -46,7 +46,7 @@ const CartProvider = ({ children }) => {
   };
 
   const totalPrice = useMemo(() => {
-    return cart.reduce((total, item) => (total + 2000) + item.price * item.quantity, 0);
+    return cart.reduce((total, item) => (total + item.price * item.quantity), 0);
   }, [cart]);
 
   return (

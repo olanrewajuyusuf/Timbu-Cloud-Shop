@@ -34,7 +34,7 @@ const ItemLeft = () => {
               </td>
               <td className='text-start'>
                 <div className="flex justify-between items-center w-full">
-                  <span>#24,000</span> 
+                  <span>₦24,000</span> 
                   <img src={close} alt="close menu" />
                 </div>
               </td>
@@ -60,7 +60,7 @@ const ItemLeft = () => {
               </td>
               <td className='text-start'>
                 <div className="flex justify-between items-center w-full">
-                  <span>#24,000</span> 
+                  <span>₦24,000</span> 
                   <img src={close} alt="close menu" />
                 </div>
               </td>
@@ -85,7 +85,7 @@ const ItemLeft = () => {
               </td>
               <td className='text-start'>
                 <div className="flex justify-between items-center w-full">
-                  <span>#24,000</span> 
+                  <span>₦24,000</span> 
                   <img src={close} alt="close menu" />
                 </div>
               </td>
