@@ -3,12 +3,13 @@ import Arrow from "../assets/icons/Arrow.png";
 import Expand_down from "../assets/icons/Expand_down.png";
 import Expand_up from "../assets/icons/Expand_up.png";
 import close from "../assets/icons/close.png";
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { CartContext } from "../contexts/CartContext";
 import Header from "./Header";
 
 const CartDesktop = ({searchQuery, handleSearchChange, showInput, setShowInput}) => {
   const { cart, removeFromCart, increaseQuantity, decreaseQuantity, totalPrice } = useContext(CartContext);
+  const [value, setValue] = useState('')
 
   return (
     <div className="hidden md:block px-20 pt-14">
@@ -73,8 +74,14 @@ const CartDesktop = ({searchQuery, handleSearchChange, showInput, setShowInput})
         <div className="text-black font-[600] flex justify-between items-start mt-10">
             <div>
                 <p>Do you have a discount?</p>
-                <div className="bg-[#999999] text-[#333333] text-[12px] w-[234px] h-[42px] flex justify-between items-center rounded-e-2xl pl-3 mt-3">
-                    Enter Your Coupon Code
+                <div className="bg-[#999999] text-[12px] w-[234px] h-[42px] flex justify-between items-center rounded-e-2xl pl-3 mt-3">
+                    <input 
+                        className="bg-transparent outline-none placeholder:text-[#333333]"
+                        value={value}
+                        onChange={(e) => setValue(e.target.value)}
+                        type="text" 
+                        placeholder="Enter Your Coupon Code" 
+                    />
                     <div className="bg-black w-[42px] h-[42px] flex items-center justify-center rounded-full">
                         <img src={Arrow} alt="arrow" />
                     </div>
