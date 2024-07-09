@@ -14,7 +14,7 @@ const SearchPage = ({
   const { addToCart } = useContext(CartContext);
 
   return (
-    <div className="px-5 py-24 md:px-10 md:pt-32 md:h-screen">
+    <div className="px-5 py-24 md:px-10 md:pt-32 min-h-svh">
       <Header
         searchQuery={searchQuery}
         handleSearchChange={handleSearchChange}

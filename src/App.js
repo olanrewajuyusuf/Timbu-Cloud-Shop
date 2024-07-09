@@ -37,7 +37,7 @@ const App = () => {
   );
 
   return (
-    <main>
+    <main className="max-w-[1440px]">
       <Routes>
         <Route
           path="/"

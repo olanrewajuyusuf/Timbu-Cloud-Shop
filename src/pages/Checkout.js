@@ -4,7 +4,7 @@ import CheckoutDesktop from "../components/CheckoutDesktop";
 
 const Checkout = (searchQuery, handleSearchChange, showInput, setShowInput) => {
   return (
-    <div>
+    <div className="min-h-svh">
       <CheckoutMobile />
       <CheckoutDesktop
         searchQuery={searchQuery}

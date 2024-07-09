@@ -1,6 +1,6 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import Hero from "../components/Hero";
+// import Hero from "../components/Hero";
 import LimitedEditions from "../components/LimitedEditions";
 import Products from "../components/Products";
 
@@ -18,7 +18,7 @@ const HomePage = ({
         showInput={showInput}
         setShowInput={setShowInput}
       />
-      <Hero />
+      {/* <Hero /> */}
       <Products />
       <LimitedEditions />
       <Footer />
