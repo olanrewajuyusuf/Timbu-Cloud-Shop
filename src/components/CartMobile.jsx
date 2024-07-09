@@ -8,7 +8,7 @@ import { CartContext } from "../contexts/CartContext";
 import Header from "./Header";
 
 const CartMobile = () => {
-  const { cart, removeFromCart } = useContext(CartContext);
+  const { cart, removeFromCart, increaseQuantity, decreaseQuantity, totalPrice } = useContext(CartContext);
 
   return (
     <div className="md:hidden">
@@ -35,13 +35,13 @@ const CartMobile = () => {
               <div className="flex justify-between items-center gap-5 pt-3">
                 <div className="flex justify-between items-center gap-5">
                   <span className="flex justify-between items-center border border-[#999999] w-[70px] px-1">
-                    <span>2</span>
+                    <span>{item.quantity}</span>
                     <span>
-                      <img src={Expand_up} alt="arrow up" />
-                      <img src={Expand_down} alt="arrow down" />
+                      <img onClick={() => increaseQuantity(item.id)} src={Expand_up} alt="arrow up" />
+                      <img onClick={() => decreaseQuantity(item.id)} src={Expand_down} alt="arrow down" />
                     </span>
                   </span>
-                  <span>#{item.price}</span>
+                  <span>#{item.price * item.quantity.toFixed(2)}</span>
                 </div>
                 <img onClick={() => removeFromCart(item.id)} src={close} alt="close menu" />
               </div>
@@ -64,7 +64,7 @@ const CartMobile = () => {
           </div>
           <div className="flex justify-between items-center w-[283px] text-[24px]">
             <span>Total</span>
-            <span>#45,000</span>
+            <span>#{totalPrice.toFixed(2)}</span>
           </div>
           <Link
             className="bg-[#333333] hover:bg-[#555555] text-white w-[220px] h-[51px] flex justify-center items-center rounded-[10px]"
