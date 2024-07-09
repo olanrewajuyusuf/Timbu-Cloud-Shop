@@ -1,5 +1,5 @@
 import pearl from "../../assets/images/desktop/latest/Pearl.png";
-import clustered from "../../assets/images/desktop/latest/Clustered.png";
+import clustered from "../../assets/images/desktop/latest/cluster.png";
 import aurora from "../../assets/images/desktop/latest/Aurora.png";
 import flora from "../../assets/images/desktop/latest/Flora.png";
 import turkey from "../../assets/images/desktop/latest/Turkish.png";

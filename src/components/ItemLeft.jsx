@@ -3,7 +3,7 @@ import Expand_down from "../assets/icons/Expand_down.png";
 import Expand_up from "../assets/icons/Expand_up.png";
 import close from "../assets/icons/close.png";
 import turkey from "../assets/images/desktop/latest/Turkish.png";
-import clustered from "../assets/images/desktop/latest/Clustered.png";
+import clustered from "../assets/images/desktop/latest/cluster.png";
 import headgear from "../assets/images/desktop/limited/headgear.png";
 
 const ItemLeft = () => {
