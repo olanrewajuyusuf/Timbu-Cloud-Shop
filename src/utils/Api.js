@@ -5,7 +5,7 @@ const orgId = "3062ebeffcd5465f9577623769d20813";
 export const fetchProducts = async (page = 1) => {
   try {
     const response = await fetch(
-      `/api/products?organization_id=${orgId}&reverse_sort=false&page=${page}&size=10&Appid=${appId}&Apikey=${apiKey}`
+      `https://api.timbu.cloud/products?organization_id=${orgId}&reverse_sort=false&page=${page}&size=10&Appid=${appId}&Apikey=${apiKey}`
     );
 
     if (!response.ok) {
