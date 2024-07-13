@@ -12,7 +12,7 @@ const CartDesktop = ({searchQuery, handleSearchChange, showInput, setShowInput})
   const [value, setValue] = useState('')
 
   return (
-    <div className="hidden md:block px-20 pt-14">
+    <div className="hidden md:block px-20 pt-14 text-[#333333]">
       <Header 
         padding='80px'
         searchQuery={searchQuery}
@@ -30,7 +30,7 @@ const CartDesktop = ({searchQuery, handleSearchChange, showInput, setShowInput})
               <p>Your cart is empty</p>
             </div>
           )}
-          {cart.length > 0 && <table className="w-full text-black font-[600] text-[20px]">
+          {cart.length > 0 && <table className="w-full font-[600] text-[20px]">
             <thead>
               <tr className="">
                 <th className='text-start'>Product</th>
@@ -42,15 +42,17 @@ const CartDesktop = ({searchQuery, handleSearchChange, showInput, setShowInput})
             <tbody >
             {cart.map(item => (
               <tr key={item.id} className="border-b-[1px] border-black">
-                <td className='text-start flex items-center gap-5'>
-                  <img
-                    className="w-[124px] h-[124px] object-cover"
-                    src={item.image}
-                    alt="pearl"
-                  />
+                <td className='text-start flex items-center gap-16'>
+                  <div className="w-[199px] h-[196.82px] rounded-lg border-[1px] overflow-hidden border-black mt-3 mb-5">
+                    <img
+                      className="w-full h-full object-cover"
+                      src={item.image}
+                      alt="pearl"
+                    />
+                  </div>
                   <p className=" ">{item.name}</p>
                 </td>
-                <td className='text-start'>₦{item.price}</td>
+                <td className='text-start'>₦{item.current_price[0].NGN[0]}</td>
                 <td className='text-start'>
                     <span className="flex justify-between items-center border border-[#999999] w-[70px] px-1">
                       <span>{item.quantity}</span>
@@ -62,7 +64,7 @@ const CartDesktop = ({searchQuery, handleSearchChange, showInput, setShowInput})
                 </td>
                 <td className='text-start'>
                   <div className="flex justify-between items-center w-full">
-                    <span>₦{item.price * item.quantity.toFixed(2)}</span> 
+                    <span>₦{item.current_price[0].NGN[0] * item.quantity.toFixed(2)}</span> 
                     <img onClick={() => removeFromCart(item.id)} src={close} alt="close menu" />
                   </div>
                 </td>

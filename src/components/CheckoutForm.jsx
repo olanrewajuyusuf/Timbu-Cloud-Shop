@@ -4,8 +4,14 @@ import Visa from '../assets/icons/Visa.png'
 import mastercard from '../assets/icons/mastercard.png'
 import paypal from '../assets/icons/paypal.png'
 import tick from '../assets/icons/tick.png'
+import { CartContext } from "../contexts/CartContext";
+import { useContext, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const CheckoutForm = () => {
+    const { totalPrice } = useContext(CartContext);
+    const [value, setValue] = useState('');
+    
   return (
     <>
     <div className='p-5 border-b-[1px] border-black'>
@@ -29,17 +35,45 @@ const CheckoutForm = () => {
 
         <form className='mt-10'>
             <label htmlFor="name">Cardholder’s name</label>
-            <input className='w-full h-[40px] pl-5 bg-[#CBCBCB] border-[1px] border-[#4E4E4E] rounded-md text-[12px] my-2' type="text" name='name' placeholder='Abhay City' />
+            <input 
+                value={value}
+                onCanPlay={(e)=> setValue(e.target.value)}
+                className='w-full h-[40px] pl-5 bg-[#CBCBCB] border-[1px] border-[#4E4E4E] rounded-md text-[12px] my-2' 
+                type="text" 
+                name='name' 
+                placeholder='Abhay City' 
+            />
             <label htmlFor="number">Card number</label>
-            <input className='w-full h-[40px] pl-5 bg-[#CBCBCB] border-[1px] border-[#4E4E4E] rounded-md text-[12px] mt-2' type="number" name='number' placeholder='1111 2222 3333 4444' />
+            <input 
+                value={value}
+                onCanPlay={(e)=> setValue(e.target.value)}
+                className='w-full h-[40px] pl-5 bg-[#CBCBCB] border-[1px] border-[#4E4E4E] rounded-md text-[12px] mt-2' 
+                type="number" 
+                name='number' 
+                placeholder='1111 2222 3333 4444' 
+            />
             <div className='grid grid-cols-2 gap-5 my-5'>
                 <div>
                     <label htmlFor="date">Expiry date</label>
-                    <input className='w-full h-[40px] pl-5 bg-[#CBCBCB] border-[1px] border-[#4E4E4E] rounded-md text-[12px] mt-2' type="text" name='date' placeholder='23/2027' />
+                    <input 
+                        value={value}
+                        onCanPlay={(e)=> setValue(e.target.value)}
+                        className='w-full h-[40px] pl-5 bg-[#CBCBCB] border-[1px] border-[#4E4E4E] rounded-md text-[12px] mt-2' 
+                        type="text" 
+                        name='date' 
+                        placeholder='23/2027' 
+                    />
                 </div>
                 <div>
                     <label htmlFor="cvv">CVV</label>
-                    <input className='w-full h-[40px] pl-5 bg-[#CBCBCB] border-[1px] border-[#4E4E4E] rounded-md text-[12px] mt-2' type="number" name='cvv' placeholder='123' />
+                    <input 
+                        value={value}
+                        onCanPlay={(e)=> setValue(e.target.value)}
+                        className='w-full h-[40px] pl-5 bg-[#CBCBCB] border-[1px] border-[#4E4E4E] rounded-md text-[12px] mt-2' 
+                        type="number" 
+                        name='cvv' 
+                        placeholder='123' 
+                    />
                 </div>
             </div>
         </form>
@@ -47,7 +81,7 @@ const CheckoutForm = () => {
     <div className='py-3 px-5 font-[600]'>
         <span className='flex justify-between'>
             <p>Subtotal</p>
-            <p>₦43,00</p>
+            <p>₦{totalPrice.toFixed(2)}</p>
         </span>
         <span className='flex justify-between'>
             <p>Delivery</p>
@@ -55,7 +89,7 @@ const CheckoutForm = () => {
         </span>
         <span className='flex justify-between'>
             <p>Total</p>
-            <p>₦45,000</p>
+            <p>₦{totalPrice > 1 ? totalPrice + 2000 : '0.00'}</p>
         </span>
 
         <p className='my-3 flex items-center gap-1 text-[14px]'>
@@ -63,7 +97,7 @@ const CheckoutForm = () => {
             Save details for future payments
         </p>
         <div className='flex justify-center'>
-            <button className='w-[290px] h-[58px] rounded-[44px] bg-[#333333] hover:bg-[#444444] text-white my-5 mx-auto'>Checkout</button>
+            <Link to='/'><button className='w-[290px] h-[58px] rounded-[44px] bg-[#333333] hover:bg-[#444444] text-white my-5 mx-auto'>Checkout</button></Link>
         </div>
     </div>
     </>

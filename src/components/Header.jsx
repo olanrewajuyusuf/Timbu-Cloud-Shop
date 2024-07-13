@@ -13,7 +13,7 @@ const Header = ({padding, searchQuery, handleSearchChange, showInput, setShowInp
   return (
     <header 
     style={styles} 
-    className='fixed top-0 left-0 w-full max-w-[1440px] bg-[#CBCBCB] z-10 px-5 md:px-10 pt-10 pb-2 text-[#333333]'
+    className='fixed top-0 left-[50%] translate-x-[-50%] w-full max-w-[1280px] bg-[#CBCBCB] z-10 px-5 md:px-10 pt-10 pb-2 text-[#333333]'
     >
       <nav className='flex justify-between items-center'>
           <Link to='/'>

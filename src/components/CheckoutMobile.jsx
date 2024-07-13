@@ -2,6 +2,7 @@ import React from 'react'
 import CheckoutForm from './CheckoutForm'
 import { Link } from 'react-router-dom'
 import arrowl from '../assets/icons/arrowl.png'
+import ItemLeft from './ItemLeft'
 
 const CheckoutMobile = () => {
   return (
@@ -14,6 +15,9 @@ const CheckoutMobile = () => {
             <p>Provide your credit card information to complete your purchase.</p>
         </div>
         <CheckoutForm />
+        <div className='px-5'>
+          <ItemLeft />
+        </div>
     </div>
   )
 }

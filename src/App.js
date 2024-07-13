@@ -10,6 +10,7 @@ import { desktopProducts } from "./data/Desktop/LimitedEditions";
 import { headgearsMobile } from "./data/Search";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import ProductDetails from "./pages/ProductDetails";
 
 const App = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -37,7 +38,7 @@ const App = () => {
   );
 
   return (
-    <main className="max-w-[1440px]">
+    <main className="max-w-[1280px] mx-auto">
       <Routes>
         <Route
           path="/"
@@ -65,6 +66,17 @@ const App = () => {
           path="/cart"
           element={
             <Cart
+              searchQuery={searchQuery}
+              handleSearchChange={handleSearchChange}
+              showInput={showInput}
+              setShowInput={setShowInput}
+            />
+          }
+        />
+        <Route
+          path="/product/:id"
+          element={
+            <ProductDetails
               searchQuery={searchQuery}
               handleSearchChange={handleSearchChange}
               showInput={showInput}

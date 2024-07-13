@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 
 const CheckoutDesktop = ({searchQuery, handleSearchChange, showInput, setShowInput}) => {
   return (
-    <div className='hidden lg:block mt-[6%] text-black p-20'>
+    <div className='hidden lg:block text-black p-20 pt-[11%]'>
       <Header 
         padding='80px'
         searchQuery={searchQuery}
@@ -20,7 +20,7 @@ const CheckoutDesktop = ({searchQuery, handleSearchChange, showInput, setShowInp
       </div>
       <div className='flex gap-10'>
         <ItemLeft />
-        <div className='bg-[#4E4E4E]'>
+        <div className='bg-[#A0A0A0]'>
             <h2 className='text-[24px] font-[600] p-5'>Payment Info.</h2>
             <CheckoutForm />
         </div>

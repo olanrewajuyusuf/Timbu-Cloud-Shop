@@ -32,7 +32,7 @@ const CartMobile = ({searchQuery, handleSearchChange, showInput, setShowInput}) 
           <div key={item.id} className="p-5">
             <div  className="flex items-center font-[600] gap-4 border-b-[1px] border-black py-3">
             <img
-              className="w-[124px] h-[124px] object-cover"
+              className="w-[124px] h-[124px] object-cover rounded-lg"
               src={item.image}
               alt='product'
             />
@@ -47,7 +47,7 @@ const CartMobile = ({searchQuery, handleSearchChange, showInput, setShowInput}) 
                       <img onClick={() => decreaseQuantity(item.id)} src={Expand_down} alt="arrow down" />
                     </span>
                   </span>
-                  <span>₦{item.price * item.quantity.toFixed(2)}</span>
+                  <span>₦{item.current_price[0].NGN[0] * item.quantity.toFixed(2)}</span>
                 </div>
                 <img onClick={() => removeFromCart(item.id)} src={close} alt="close menu" />
               </div>
@@ -59,11 +59,12 @@ const CartMobile = ({searchQuery, handleSearchChange, showInput, setShowInput}) 
           <p>Do you have a discount?</p>
           <div className="bg-[#999999] text-[12px] w-[234px] h-[42px] flex justify-between items-center rounded-e-2xl pl-3">
             <input 
-            className="bg-transparent outline-none placeholder:text-[#333333]"
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
-            type="text" 
-            placeholder="Enter Your Coupon Code" />
+              className="bg-transparent outline-none placeholder:text-[#333333]"
+              value={value}
+              onChange={(e) => setValue(e.target.value)}
+              type="text" 
+              placeholder="Enter Your Coupon Code" 
+            />
             <div className="bg-black w-[42px] h-[42px] flex items-center justify-center rounded-full">
               <img src={Arrow} alt="arrow" />
             </div>

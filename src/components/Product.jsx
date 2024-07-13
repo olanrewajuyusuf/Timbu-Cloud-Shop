@@ -9,7 +9,7 @@ const Product = ({products, desktopProducts}) => {
     <div>
         {products && products.map(product => (
             <div className='md:hidden my-5' key={product.id}>
-                <img className="w-full h-auto shadow-xl" src={product.image} alt="product" />
+                <img className="w-full h-auto rounded-lg" src={product.image} alt="product" />
                 <div className='flex justify-between items-start mt-4'>
                     <div className='font-bold text-black text-[16px]'>
                         <p>{product.name}</p>
@@ -29,9 +29,9 @@ const Product = ({products, desktopProducts}) => {
         {/* =====> Desktop Display <===== */}
         <div className='hidden md:grid grid-cols-3 lg:grid-cols-4 justify-start items-start gap-10'>
         {desktopProducts && desktopProducts.map(product => (
-            <div className='' key={product.id}>
-                <div>
-                    <img className="w-full h-[300px] object-cover" src={product.image} alt="product" />
+            <div className='hover:bg-[#A3A3A3] rounded-lg p-1' key={product.id}>
+                <div className=''>
+                    <img className="w-full h-auto object-cover" src={product.image} alt="product" />
                 </div>
                 <div className='flex flex-col justify-between items-start mt-4 gap-3'>
                     <div className='font-bold text-black text-[16px]'>
