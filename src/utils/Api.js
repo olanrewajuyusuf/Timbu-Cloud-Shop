@@ -28,7 +28,7 @@ export const fetchProducts = async (page = 1) => {
 
 export const fetchProductById = async (id) => {
   const response = await fetch(
-    `/api/products/${id}?organization_id=${orgId}&Appid=${appId}&Apikey=${apiKey}`
+    `https://api.timbu.cloud/products/${id}?organization_id=${orgId}&Appid=${appId}&Apikey=${apiKey}`
   );
 
   if (!response.ok) {
