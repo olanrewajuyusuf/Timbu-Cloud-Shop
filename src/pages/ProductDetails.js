@@ -3,7 +3,7 @@ import cartIcon from "../assets/icons/cart.svg";
 import { CartContext } from "../contexts/CartContext";
 import { useParams } from "react-router-dom";
 import { fetchProductById } from "../utils/Api";
-import productImageUrls from "../utils/productData";
+// import productImageUrls from "../utils/productData";
 import Header from "../components/Header";
 
 const ProductDetails = ({
@@ -19,16 +19,15 @@ const ProductDetails = ({
   useEffect(() => {
     const fetchData = async () => {
       const result = await fetchProductById(id);
-      setProduct({
-        ...result,
-        image: productImageUrls[result.id] || "/images/lace.png",
-      });
+      // setProduct({
+      //   ...result,
+      //   image: productImageUrls[result.id] || "/images/lace.png",
+      // });
+      setProduct(result);
     };
 
     fetchData();
   }, [id]);
-
-  console.log(product);
 
   if (!product) {
     return <div>Loading...</div>;
@@ -44,12 +43,20 @@ const ProductDetails = ({
       />
 
       <div className="grid md:grid-cols-2 justify-start items-center gap-5 w-[90%] md:w-[70%] mx-auto border-[1px] p-5">
-        <div className="w-full h-[350px] sm:h-[400px]">
-          <img
+        <div className="w-full h-[350px] grid grid-cols-2 gap-5 sm:h-[400px] lg:border-r-[1px] lg:pr-5 md:pb-5">
+          {product.photos.map((image, index) => (
+            <img
+              className="w-full h-full object-cover opacity-70 hover:opacity-100"
+              key={index}
+              src={`https://api.timbu.cloud/images/${image?.url}`}
+              alt={product.name}
+            />
+          ))}
+          {/* <img
             className="w-full h-full object-cover"
             src={product.image}
             alt={product.name}
-          />
+          /> */}
         </div>
         <div className="md:pl-5">
           <h1 className="text-[24px] mb-5 md:mb-20">{product.name}</h1>

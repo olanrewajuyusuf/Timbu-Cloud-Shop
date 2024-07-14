@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { fetchProducts } from '../utils/Api';
-import productImageUrls from '../utils/productData';
+// import productImageUrls from '../utils/productData';
 import cart from '../assets/icons/cart.svg'
 import { CartContext } from '../contexts/CartContext'
 import { Link } from 'react-router-dom';
@@ -15,11 +15,12 @@ const ProductPage = () => {
         const loadProducts = async () => {
           try {
             const data = await fetchProducts(currentPage);
-            const enhancedProducts = data.items.map(product => ({
-                ...product,
-                image: productImageUrls[product.id] || '/images/lace.png'
-              }));
-              setProducts(enhancedProducts);
+            // const enhancedProducts = data.items.map(product => ({
+            //     ...product,
+            //     image: productImageUrls[product.id] || '/images/lace.png'
+            //   }));
+              // setProducts(enhancedProducts);
+              setProducts(data.items);
           } catch (error) {
             setError(error.message);
           }
@@ -47,7 +48,7 @@ const ProductPage = () => {
           <div key={product.id} className="hover:p-2 hover:shadow-xl shadow-black">
             <Link to={`/product/${product.id}`}>
             <div className='h-[330px]'>
-                <img className='w-full h-full object-cover rounded-xl' src={product.image} alt={product.name} />
+                <img className='w-full h-full object-cover rounded-xl' src={`https://api.timbu.cloud/images/${product?.photos[0]?.url}`} alt={product.name} />
             </div>
             </Link>
             <div className='flex md:flex-col justify-between items-start mt-4 gap-3'>
