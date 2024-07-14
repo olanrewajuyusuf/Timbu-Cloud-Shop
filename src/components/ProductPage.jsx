@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { fetchProducts } from '../utils/Api';
-// import productImageUrls from '../utils/productData';
 import cart from '../assets/icons/cart.svg'
 import { CartContext } from '../contexts/CartContext'
 import { Link } from 'react-router-dom';
@@ -15,12 +14,7 @@ const ProductPage = () => {
         const loadProducts = async () => {
           try {
             const data = await fetchProducts(currentPage);
-            // const enhancedProducts = data.items.map(product => ({
-            //     ...product,
-            //     image: productImageUrls[product.id] || '/images/lace.png'
-            //   }));
-              // setProducts(enhancedProducts);
-              setProducts(data.items);
+            setProducts(data.items);
           } catch (error) {
             setError(error.message);
           }
