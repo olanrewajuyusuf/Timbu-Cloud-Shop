@@ -19,7 +19,7 @@ const ItemLeft = () => {
                 <td className='text-start md:flex items-center gap-5'>
                   <img
                     className="my-5 w-[139px] h-[155px] object-cover rounded-lg border-[1px] border-black"
-                    src={item.image}
+                    src={`https://api.timbu.cloud/images/${item?.photos[0]?.url}`}
                     alt={item.name}
                   />
                   <p>{item.name}</p>
