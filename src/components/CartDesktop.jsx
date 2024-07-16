@@ -47,7 +47,7 @@ const CartDesktop = ({searchQuery, handleSearchChange, showInput, setShowInput})
                     <img
                       className="w-full h-full object-cover"
                       src={`https://api.timbu.cloud/images/${item?.photos[0]?.url}`}
-                      alt="pearl"
+                      alt={item.name}
                     />
                   </div>
                   <p className=" ">{item.name}</p>
