@@ -33,14 +33,14 @@ const CartMobile = ({searchQuery, handleSearchChange, showInput, setShowInput}) 
             <div  className="flex items-center font-[600] gap-4 border-b-[1px] border-black py-3">
             <img
               className="w-[124px] h-[124px] object-cover rounded-lg"
-              src={item.image}
+              src={`https://api.timbu.cloud/images/${item?.photos[0]?.url}`}
               alt='product'
             />
             <div className="w-full">
               <p>{item.name}</p>
               <div className="flex justify-between items-center gap-5 pt-3">
                 <div className="flex justify-between items-center gap-5">
-                  <span className="flex justify-between items-center border border-[#999999] w-[70px] px-1">
+                  <span className="flex justify-between items-center border border-[#5e4f4f] w-[70px] px-1">
                     <span>{item.quantity}</span>
                     <span>
                       <img onClick={() => increaseQuantity(item.id)} src={Expand_up} alt="arrow up" />
